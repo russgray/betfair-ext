@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A62E2BF-A4EB-4FA7-B279-D0755D3BA4E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BetfairExt</RootNamespace>
+    <AssemblyName>BetfairExt</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BFExchangeExtensions.cs" />
+    <Compile Include="BFGlobalExtensions.cs" />
+    <Compile Include="CompleteMarketPrices.cs" />
+    <Compile Include="CompleteMarketTradedVolume.cs" />
+    <Compile Include="Interfaces\IBFGlobalServiceClient.cs" />
+    <Compile Include="Parsers\AllMarketsParser.cs" />
+    <Compile Include="Parsers\CompleteMarketPricesParser.cs" />
+    <Compile Include="Parsers\MarketPricesParser.cs" />
+    <Compile Include="Parsers\RemovedRunnerParser.cs" />
+    <Compile Include="Parsers\RunnerPricesParser.cs" />
+    <Compile Include="Parsers\TradedVolumeParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemovedRunner.cs" />
+    <Compile Include="Interfaces\IBFExchangeServiceClient.cs" />
+    <Compile Include="Service References\BFExchange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BFGlobal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.CancelBetsByMarketResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.CancelBetsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetAccountFundsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetAccountStatementResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetAllMarketsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetBetHistoryResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetBetLiteResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetBetMatchesLiteResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetBetResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetCompleteMarketPricesCompressedResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetCouponResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetCurrentBetsLiteResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetCurrentBetsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetDetailedAvailableMktDepthResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetInPlayMarketsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketInfoResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketPricesCompressedResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketPricesResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketProfitAndLossResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketTradedVolumeCompressedResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMarketTradedVolumeResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMUBetsLiteResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetMUBetsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetPrivateMarketsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetSilksResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.GetSilksV2Resp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.HeartbeatResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.PlaceBetsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BetfairExt.BFExchange.UpdateBetsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFExchange\BFExchangeService.wsdl" />
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.AddPaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ConvertCurrencyResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.CreateAccountResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.DeletePaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.DepositFromPaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ForgotPasswordResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetCurrenciesResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetCurrenciesV2Resp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetEventsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetEventTypesResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetPaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.GetSubscriptionInfoResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.KeepAliveResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.LoginResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.LogoutResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ModifyPasswordResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ModifyProfileResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.RetrieveLIMBMessageResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.SelfExcludeResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.SetChatNameResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.SubmitLIMBMessageResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.TransferFundsResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.UpdatePaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ViewProfileResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ViewProfileV2Resp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.ViewReferAndEarnResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.WithdrawByBankTransferResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BetfairExt.BFGlobal.WithdrawToPaymentCardResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BFGlobal\BFGlobalService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BFExchange\" />
+    <WCFMetadataStorage Include="Service References\BFGlobal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFGlobal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFGlobal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFGlobal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFExchange\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFExchange\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BFExchange\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
